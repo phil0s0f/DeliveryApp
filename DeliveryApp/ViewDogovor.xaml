@@ -1,0 +1,19 @@
+﻿<Window x:Class="DeliveryApp.ViewDogovor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliveryApp"
+        mc:Ignorable="d"
+        Title="Просмотр договоров" Height="450" Width="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="dataDogovor" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер договора" Width="*" Binding="{Binding НомерДоговора}"/>
+                <DataGridTextColumn Header="Дата договора" Width="2*" Binding="{Binding ДатаДоговора}"/>
+                <DataGridTextColumn Header="Код поставщика" Width="2*" Binding="{Binding КодПоставщика}"/>
+                <DataGridTextColumn Header="Комментарий" Width="2*" Binding="{Binding Комментарий}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

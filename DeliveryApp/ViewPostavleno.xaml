@@ -1,0 +1,19 @@
+﻿<Window x:Class="DeliveryApp.ViewPostavleno"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliveryApp"
+        mc:Ignorable="d"
+        Title="Просмотр поставок" Height="450" Width="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="dataPostavleno" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер договора" Width="*" Binding="{Binding НомерДоговора}"/>
+                <DataGridTextColumn Header="Товар" Width="2*" Binding="{Binding Товар}"/>
+                <DataGridTextColumn Header="Количество" Width="2*" Binding="{Binding Количество}"/>
+                <DataGridTextColumn Header="Цена" Width="2*" Binding="{Binding Цена}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

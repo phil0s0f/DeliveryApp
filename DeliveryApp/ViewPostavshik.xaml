@@ -1,0 +1,18 @@
+﻿<Window x:Class="DeliveryApp.ViewPostavshik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliveryApp"
+        mc:Ignorable="d"
+        Title="Просмотр поставщика" Height="450" Width="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="dataPostavshik" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код поставщика" Width="*" Binding="{Binding 				КодПоставщика}"/>
+                <DataGridTextColumn Header="Адрес" Width="2*" Binding="{Binding Адрес}"/>
+                <DataGridTextColumn Header="Примечание" Width="2*" Binding="{Binding                        Примечание}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

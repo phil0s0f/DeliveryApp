@@ -69,6 +69,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewDogovor.xaml.cs">
+      <DependentUpon>ViewDogovor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFizLico.xaml.cs">
+      <DependentUpon>ViewFizLico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPostavleno.xaml.cs">
+      <DependentUpon>ViewPostavleno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPostavshik.xaml.cs">
+      <DependentUpon>ViewPostavshik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUrLico.xaml.cs">
+      <DependentUpon>ViewUrLico.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Договоры.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -96,6 +111,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ViewDogovor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewFizLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPostavleno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPostavshik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUrLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model1.Context.cs">

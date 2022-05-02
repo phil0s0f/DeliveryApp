@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeliveryApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Доставка" Height="450" Width="800">
     <Grid>
         <Menu HorizontalAlignment="Left"  VerticalAlignment="Top">
             <MenuItem Header="Просмотр">
-                <MenuItem Header="Поставщик"/>
-                <MenuItem Header="Договоры"/>
-                <MenuItem Header="Физические лица"/>
-                <MenuItem Header="Юридические лица"/>
-                <MenuItem Header="Поставлено"/>
+                <MenuItem Header="Поставщик" Click="OpenViewPostavshik"/>
+                <MenuItem Header="Договоры" Click="OpenViewDogovor"/>
+                <MenuItem Header="Физические лица" Click="OpenViewFizLico"/>
+                <MenuItem Header="Юридические лица" Click="OpenViewUrLico"/>
+                <MenuItem Header="Поставлено" Click="OpenViewPostavleno"/>
             </MenuItem>
             <MenuItem Header="Редактирование">
                 <MenuItem Header="Поставщик"/>
