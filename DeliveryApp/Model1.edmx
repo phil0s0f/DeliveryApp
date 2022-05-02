@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище deliveryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Договоры">
+          <Key>
+            <PropertyRef Name="НомерДоговора" />
+          </Key>
+          <Property Name="НомерДоговора" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ДатаДоговора" Type="datetime" />
+          <Property Name="КодПоставщика" Type="int" Nullable="false" />
+          <Property Name="Комментарий" Type="text" />
+        </EntityType>
+        <EntityType Name="Поставлено">
+          <Key>
+            <PropertyRef Name="НомерДоговора" />
+            <PropertyRef Name="Товар" />
+          </Key>
+          <Property Name="НомерДоговора" Type="int" Nullable="false" />
+          <Property Name="Товар" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Количество" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Цена" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Поставщики">
+          <Key>
+            <PropertyRef Name="КодПоставщика" />
+          </Key>
+          <Property Name="КодПоставщика" Type="int" Nullable="false" />
+          <Property Name="Адрес" Type="text" Nullable="false" />
+          <Property Name="Примечание" Type="text" />
+        </EntityType>
+        <EntityType Name="ФизическиеЛица">
+          <Key>
+            <PropertyRef Name="КодПоставщика" />
+          </Key>
+          <Property Name="КодПоставщика" Type="int" Nullable="false" />
+          <Property Name="Фамилия" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Имя" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Отчество" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="НомерСвидетельства" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ЮридическиеЛица">
+          <Key>
+            <PropertyRef Name="КодПоставщика" />
+          </Key>
+          <Property Name="КодПоставщика" Type="int" Nullable="false" />
+          <Property Name="Название" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="НалоговыйНомер" Type="char" MaxLength="20" />
+          <Property Name="НомерСвидетельстваНДС" Type="char" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Договоры_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Договоры" Type="Self.Договоры" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="КодПоставщика" />
+            </Principal>
+            <Dependent Role="Договоры">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Поставлено_Договоры">
+          <End Role="Договоры" Type="Self.Договоры" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Поставлено" Type="Self.Поставлено" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Договоры">
+              <PropertyRef Name="НомерДоговора" />
+            </Principal>
+            <Dependent Role="Поставлено">
+              <PropertyRef Name="НомерДоговора" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ФизическиеЛица_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1" />
+          <End Role="ФизическиеЛица" Type="Self.ФизическиеЛица" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="КодПоставщика" />
+            </Principal>
+            <Dependent Role="ФизическиеЛица">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ЮридическиеЛица_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1" />
+          <End Role="ЮридическиеЛица" Type="Self.ЮридическиеЛица" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="КодПоставщика" />
+            </Principal>
+            <Dependent Role="ЮридическиеЛица">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище deliveryModelContainer">
+          <EntitySet Name="Договоры" EntityType="Self.Договоры" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Поставлено" EntityType="Self.Поставлено" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Поставщики" EntityType="Self.Поставщики" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ФизическиеЛица" EntityType="Self.ФизическиеЛица" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ЮридическиеЛица" EntityType="Self.ЮридическиеЛица" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Договоры_Поставщики" Association="Self.FK_Договоры_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="Договоры" EntitySet="Договоры" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Поставлено_Договоры" Association="Self.FK_Поставлено_Договоры">
+            <End Role="Договоры" EntitySet="Договоры" />
+            <End Role="Поставлено" EntitySet="Поставлено" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ФизическиеЛица_Поставщики" Association="Self.FK_ФизическиеЛица_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="ФизическиеЛица" EntitySet="ФизическиеЛица" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ЮридическиеЛица_Поставщики" Association="Self.FK_ЮридическиеЛица_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="ЮридическиеЛица" EntitySet="ЮридическиеЛица" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="deliveryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Договоры">
+          <Key>
+            <PropertyRef Name="НомерДоговора" />
+          </Key>
+          <Property Name="НомерДоговора" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ДатаДоговора" Type="DateTime" Precision="3" />
+          <Property Name="КодПоставщика" Type="Int32" Nullable="false" />
+          <Property Name="Комментарий" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Поставщики" Relationship="Self.FK_Договоры_Поставщики" FromRole="Договоры" ToRole="Поставщики" />
+          <NavigationProperty Name="Поставлено" Relationship="Self.FK_Поставлено_Договоры" FromRole="Договоры" ToRole="Поставлено" />
+        </EntityType>
+        <EntityType Name="Поставлено">
+          <Key>
+            <PropertyRef Name="НомерДоговора" />
+            <PropertyRef Name="Товар" />
+          </Key>
+          <Property Name="НомерДоговора" Type="Int32" Nullable="false" />
+          <Property Name="Товар" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Количество" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Цена" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Договоры" Relationship="Self.FK_Поставлено_Договоры" FromRole="Поставлено" ToRole="Договоры" />
+        </EntityType>
+        <EntityType Name="Поставщики">
+          <Key>
+            <PropertyRef Name="КодПоставщика" />
+          </Key>
+          <Property Name="КодПоставщика" Type="Int32" Nullable="false" />
+          <Property Name="Адрес" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Примечание" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Договоры" Relationship="Self.FK_Договоры_Поставщики" FromRole="Поставщики" ToRole="Договоры" />
+          <NavigationProperty Name="ФизическиеЛица" Relationship="Self.FK_ФизическиеЛица_Поставщики" FromRole="Поставщики" ToRole="ФизическиеЛица" />
+          <NavigationProperty Name="ЮридическиеЛица" Relationship="Self.FK_ЮридическиеЛица_Поставщики" FromRole="Поставщики" ToRole="ЮридическиеЛица" />
+        </EntityType>
+        <EntityType Name="ФизическиеЛица">
+          <Key>
+            <PropertyRef Name="КодПоставщика" />
+          </Key>
+          <Property Name="КодПоставщика" Type="Int32" Nullable="false" />
+          <Property Name="Фамилия" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Имя" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Отчество" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="НомерСвидетельства" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Поставщики" Relationship="Self.FK_ФизическиеЛица_Поставщики" FromRole="ФизическиеЛица" ToRole="Поставщики" />
+        </EntityType>
+        <EntityType Name="ЮридическиеЛица">
+          <Key>
+            <PropertyRef Name="КодПоставщика" />
+          </Key>
+          <Property Name="КодПоставщика" Type="Int32" Nullable="false" />
+          <Property Name="Название" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="НалоговыйНомер" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="НомерСвидетельстваНДС" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Поставщики" Relationship="Self.FK_ЮридическиеЛица_Поставщики" FromRole="ЮридическиеЛица" ToRole="Поставщики" />
+        </EntityType>
+        <Association Name="FK_Договоры_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Договоры" Type="Self.Договоры" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="КодПоставщика" />
+            </Principal>
+            <Dependent Role="Договоры">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Поставлено_Договоры">
+          <End Role="Договоры" Type="Self.Договоры" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Поставлено" Type="Self.Поставлено" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Договоры">
+              <PropertyRef Name="НомерДоговора" />
+            </Principal>
+            <Dependent Role="Поставлено">
+              <PropertyRef Name="НомерДоговора" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ФизическиеЛица_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1" />
+          <End Role="ФизическиеЛица" Type="Self.ФизическиеЛица" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="КодПоставщика" />
+            </Principal>
+            <Dependent Role="ФизическиеЛица">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ЮридическиеЛица_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1" />
+          <End Role="ЮридическиеЛица" Type="Self.ЮридическиеЛица" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="КодПоставщика" />
+            </Principal>
+            <Dependent Role="ЮридическиеЛица">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="deliveryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Договоры" EntityType="Self.Договоры" />
+          <EntitySet Name="Поставлено" EntityType="Self.Поставлено" />
+          <EntitySet Name="Поставщики" EntityType="Self.Поставщики" />
+          <EntitySet Name="ФизическиеЛица" EntityType="Self.ФизическиеЛица" />
+          <EntitySet Name="ЮридическиеЛица" EntityType="Self.ЮридическиеЛица" />
+          <AssociationSet Name="FK_Договоры_Поставщики" Association="Self.FK_Договоры_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="Договоры" EntitySet="Договоры" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Поставлено_Договоры" Association="Self.FK_Поставлено_Договоры">
+            <End Role="Договоры" EntitySet="Договоры" />
+            <End Role="Поставлено" EntitySet="Поставлено" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ФизическиеЛица_Поставщики" Association="Self.FK_ФизическиеЛица_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="ФизическиеЛица" EntitySet="ФизическиеЛица" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ЮридическиеЛица_Поставщики" Association="Self.FK_ЮридическиеЛица_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="ЮридическиеЛица" EntitySet="ЮридическиеЛица" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище deliveryModelContainer" CdmEntityContainer="deliveryEntities">
+          <EntitySetMapping Name="Договоры">
+            <EntityTypeMapping TypeName="deliveryModel.Договоры">
+              <MappingFragment StoreEntitySet="Договоры">
+                <ScalarProperty Name="НомерДоговора" ColumnName="НомерДоговора" />
+                <ScalarProperty Name="ДатаДоговора" ColumnName="ДатаДоговора" />
+                <ScalarProperty Name="КодПоставщика" ColumnName="КодПоставщика" />
+                <ScalarProperty Name="Комментарий" ColumnName="Комментарий" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Поставлено">
+            <EntityTypeMapping TypeName="deliveryModel.Поставлено">
+              <MappingFragment StoreEntitySet="Поставлено">
+                <ScalarProperty Name="НомерДоговора" ColumnName="НомерДоговора" />
+                <ScalarProperty Name="Товар" ColumnName="Товар" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="Цена" ColumnName="Цена" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Поставщики">
+            <EntityTypeMapping TypeName="deliveryModel.Поставщики">
+              <MappingFragment StoreEntitySet="Поставщики">
+                <ScalarProperty Name="КодПоставщика" ColumnName="КодПоставщика" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ФизическиеЛица">
+            <EntityTypeMapping TypeName="deliveryModel.ФизическиеЛица">
+              <MappingFragment StoreEntitySet="ФизическиеЛица">
+                <ScalarProperty Name="КодПоставщика" ColumnName="КодПоставщика" />
+                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+                <ScalarProperty Name="Имя" ColumnName="Имя" />
+                <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+                <ScalarProperty Name="НомерСвидетельства" ColumnName="НомерСвидетельства" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ЮридическиеЛица">
+            <EntityTypeMapping TypeName="deliveryModel.ЮридическиеЛица">
+              <MappingFragment StoreEntitySet="ЮридическиеЛица">
+                <ScalarProperty Name="КодПоставщика" ColumnName="КодПоставщика" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="НалоговыйНомер" ColumnName="НалоговыйНомер" />
+                <ScalarProperty Name="НомерСвидетельстваНДС" ColumnName="НомерСвидетельстваНДС" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

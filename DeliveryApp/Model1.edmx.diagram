@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="54a6368118514536904b3c0bdaae343f" Name="Diagram1">
+        <EntityTypeShape EntityType="deliveryModel.Договоры" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="deliveryModel.Поставлено" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="deliveryModel.Поставщики" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="deliveryModel.ФизическиеЛица" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="deliveryModel.ЮридическиеЛица" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="deliveryModel.FK_Договоры_Поставщики" ManuallyRouted="false" />
+        <AssociationConnector Association="deliveryModel.FK_Поставлено_Договоры" ManuallyRouted="false" />
+        <AssociationConnector Association="deliveryModel.FK_ФизическиеЛица_Поставщики" ManuallyRouted="false" />
+        <AssociationConnector Association="deliveryModel.FK_ЮридическиеЛица_Поставщики" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
