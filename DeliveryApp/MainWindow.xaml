@@ -23,11 +23,11 @@
                 <MenuItem Header="Поставлено"/>
             </MenuItem>
             <MenuItem Header="Добавление">
-                <MenuItem Header="Поставщик"/>
-                <MenuItem Header="Договоры"/>
-                <MenuItem Header="Физические лица"/>
-                <MenuItem Header="Юридические лица"/>
-                <MenuItem Header="Поставлено"/>
+                <MenuItem Header="Поставщик" Click="OpenAddPostavshik"/>
+                <MenuItem Header="Договоры" Click="OpenAddDogovor"/>
+                <MenuItem Header="Физические лица" Click="OpenAddFizLico"/>
+                <MenuItem Header="Юридические лица" Click="OpenAddUrLico"/>
+                <MenuItem Header="Поставлено" Click="OpenAddPostavleno"/>
             </MenuItem>
             <MenuItem Header="Удаление">
                 <MenuItem Header="Поставщик"/>

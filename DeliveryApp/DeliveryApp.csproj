@@ -64,6 +64,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddDogovor.xaml.cs">
+      <DependentUpon>AddDogovor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddFizLico.xaml.cs">
+      <DependentUpon>AddFizLico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddPostavleno.xaml.cs">
+      <DependentUpon>AddPostavleno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddPostavshik.xaml.cs">
+      <DependentUpon>AddPostavshik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddUrLico.xaml.cs">
+      <DependentUpon>AddUrLico.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +114,26 @@
     <Compile Include="ЮридическиеЛица.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="AddDogovor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddFizLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPostavleno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPostavshik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddUrLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -55,5 +55,35 @@ namespace DeliveryApp
             ViewPostavleno form = new ViewPostavleno();
             form.Show();
         }
+
+        private void OpenAddPostavshik(object sender, RoutedEventArgs e)
+        {
+            AddPostavshik form = new AddPostavshik();
+            form.Show();
+        }
+
+        private void OpenAddDogovor(object sender, RoutedEventArgs e)
+        {
+            AddDogovor form = new AddDogovor();
+            form.Show();
+        }
+
+        private void OpenAddFizLico(object sender, RoutedEventArgs e)
+        {
+            AddFizLico form = new AddFizLico();
+            form.Show();
+        }
+
+        private void OpenAddUrLico(object sender, RoutedEventArgs e)
+        {
+            AddUrLico form = new AddUrLico();
+            form.Show();
+        }
+
+        private void OpenAddPostavleno(object sender, RoutedEventArgs e)
+        {
+            AddPostavleno form = new AddPostavleno();
+            form.Show();
+        }
     }
 }
