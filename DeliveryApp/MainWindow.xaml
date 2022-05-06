@@ -16,11 +16,11 @@
                 <MenuItem Header="Поставлено" Click="OpenViewPostavleno"/>
             </MenuItem>
             <MenuItem Header="Редактирование">
-                <MenuItem Header="Поставщик"/>
-                <MenuItem Header="Договоры"/>
-                <MenuItem Header="Физические лица"/>
-                <MenuItem Header="Юридические лица"/>
-                <MenuItem Header="Поставлено"/>
+                <MenuItem Header="Поставщик" Click="OpenEditPostavshik"/>
+                <MenuItem Header="Договоры" Click="OpenEditDogovor"/>
+                <MenuItem Header="Физические лица" Click="OpenEditFizLico"/>
+                <MenuItem Header="Юридические лица" Click="OpenEditUrLico"/>
+                <MenuItem Header="Поставлено" Click="OpenEditPostavleno"/>
             </MenuItem>
             <MenuItem Header="Добавление">
                 <MenuItem Header="Поставщик" Click="OpenAddPostavshik"/>

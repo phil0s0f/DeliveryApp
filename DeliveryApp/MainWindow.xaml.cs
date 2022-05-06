@@ -23,7 +23,6 @@ namespace DeliveryApp
         public MainWindow()
         {
             InitializeComponent();
-            //WIN-QKR690LSI08
         }
 
         private void OpenViewPostavshik(object sender, RoutedEventArgs e)
@@ -83,6 +82,36 @@ namespace DeliveryApp
         private void OpenAddPostavleno(object sender, RoutedEventArgs e)
         {
             AddPostavleno form = new AddPostavleno();
+            form.Show();
+        }
+
+        private void OpenEditPostavshik(object sender, RoutedEventArgs e)
+        {
+            EditPostavshik form = new EditPostavshik();
+            form.Show();
+        }
+
+        private void OpenEditDogovor(object sender, RoutedEventArgs e)
+        {
+            EditDogovor form = new EditDogovor();
+            form.Show();
+        }
+
+        private void OpenEditFizLico(object sender, RoutedEventArgs e)
+        {
+            EditFizLico form = new EditFizLico();
+            form.Show();
+        }
+
+        private void OpenEditUrLico(object sender, RoutedEventArgs e)
+        {
+            EditUrLico form = new EditUrLico();
+            form.Show();
+        }
+
+        private void OpenEditPostavleno(object sender, RoutedEventArgs e)
+        {
+            EditPostavleno form = new EditPostavleno();
             form.Show();
         }
     }

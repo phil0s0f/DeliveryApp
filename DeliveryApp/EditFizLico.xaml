@@ -1,11 +1,11 @@
-﻿<Window x:Class="DeliveryApp.AddFizLico"
+﻿<Window x:Class="DeliveryApp.EditFizLico"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeliveryApp"
         mc:Ignorable="d"
-        Title="Добавить физическое лицо" Height="450" Width="800">
+        Title="Редактирование физического лица" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -20,9 +20,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Добавление физического лица"  HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Редактирование физического лица"  HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold"/>
         <Label Content="Код поставщика:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Name="KodPostavshikBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+        <ComboBox Name="KodPostavshikBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" DisplayMemberPath="КодПоставщика" SelectionChanged="ChangeFizLico"/>
         <Label Content="Фамилия:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
         <TextBox Name="FamBox" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
         <Label Content="Имя:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
@@ -31,6 +31,6 @@
         <TextBox Name="OtchBox" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
         <Label Content="Номер свидетельства:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0"/>
         <TextBox Name="NomerSvidBox" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
-        <Button Content="Добавить" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Width="200" Height="20" Click="AddClick"/>
+        <Button Content="Сохранить" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Width="200" Height="20" Click="EditClick"/>
     </Grid>
 </Window>

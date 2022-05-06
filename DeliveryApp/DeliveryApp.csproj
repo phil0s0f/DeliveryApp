@@ -79,6 +79,21 @@
     <Compile Include="AddUrLico.xaml.cs">
       <DependentUpon>AddUrLico.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditDogovor.xaml.cs">
+      <DependentUpon>EditDogovor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditFizLico.xaml.cs">
+      <DependentUpon>EditFizLico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPostavleno.xaml.cs">
+      <DependentUpon>EditPostavleno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPostavshik.xaml.cs">
+      <DependentUpon>EditPostavshik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditUrLico.xaml.cs">
+      <DependentUpon>EditUrLico.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +146,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddUrLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditDogovor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditFizLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPostavleno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPostavshik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditUrLico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
