@@ -1,0 +1,34 @@
+﻿<Window x:Class="DeliveryApp.DeleteUrLico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliveryApp"
+        mc:Ignorable="d"
+        Title="Удаление юридического лица" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Удаление юридического лица"  HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Код поставщика:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox Name="KodPostavshikBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" DisplayMemberPath="КодПоставщика" SelectionChanged="ChangeUrLico"/>
+        <Label Content="Название:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Name="NameBox" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label Content="Налоговый номер:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
+        <TextBox Name="NalogNomerBox" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label Content="Номер свидетельства НДС:"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0"/>
+        <TextBox Name="NomerSvidNdsBox" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+        <Button Content="Удалить" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Width="200" Height="20" Click="DeleteClick"/>
+    </Grid>
+</Window>

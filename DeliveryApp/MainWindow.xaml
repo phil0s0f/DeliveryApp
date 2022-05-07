@@ -30,11 +30,11 @@
                 <MenuItem Header="Поставлено" Click="OpenAddPostavleno"/>
             </MenuItem>
             <MenuItem Header="Удаление">
-                <MenuItem Header="Поставщик"/>
-                <MenuItem Header="Договоры"/>
-                <MenuItem Header="Физические лица"/>
-                <MenuItem Header="Юридические лица"/>
-                <MenuItem Header="Поставлено"/>
+                <MenuItem Header="Поставщик" Click="OpenDeletePostavshik"/>
+                <MenuItem Header="Договоры" Click="OpenDeleteDogovor"/>
+                <MenuItem Header="Физические лица" Click="OpenDeleteFizLico"/>
+                <MenuItem Header="Юридические лица" Click="OpenDeleteUrLico"/>
+                <MenuItem Header="Поставлено" Click="OpenDeletePostavleno"/>
             </MenuItem>
         </Menu>
     </Grid>

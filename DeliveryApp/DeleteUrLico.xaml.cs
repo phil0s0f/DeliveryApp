@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 namespace DeliveryApp
 {
     /// <summary>
-    /// Логика взаимодействия для EditUrLico.xaml
+    /// Логика взаимодействия для DeleteUrLico.xaml
     /// </summary>
-    public partial class EditUrLico : Window
+    public partial class DeleteUrLico : Window
     {
         deliveryEntities context;
-        public EditUrLico()
+        public DeleteUrLico()
         {
             InitializeComponent();
             context = new deliveryEntities();
@@ -35,12 +35,10 @@ namespace DeliveryApp
             NomerSvidNdsBox.Text = urlico.НомерСвидетельстваНДС;
         }
 
-        private void EditClick(object sender, RoutedEventArgs e)
+        private void DeleteClick(object sender, RoutedEventArgs e)
         {
             ЮридическиеЛица urlico = KodPostavshikBox.SelectedItem as ЮридическиеЛица;
-            context.ЮридическиеЛица.Find(urlico.КодПоставщика).Название = NameBox.Text;
-            context.ЮридическиеЛица.Find(urlico.КодПоставщика).НалоговыйНомер = NalogNomerBox.Text;
-            context.ЮридическиеЛица.Find(urlico.КодПоставщика).НомерСвидетельстваНДС = NomerSvidNdsBox.Text;
+            context.ЮридическиеЛица.Remove(urlico);
             context.SaveChanges();
         }
     }

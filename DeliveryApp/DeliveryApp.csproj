@@ -79,6 +79,21 @@
     <Compile Include="AddUrLico.xaml.cs">
       <DependentUpon>AddUrLico.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteDogovor.xaml.cs">
+      <DependentUpon>DeleteDogovor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteFizLico.xaml.cs">
+      <DependentUpon>DeleteFizLico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePostavleno.xaml.cs">
+      <DependentUpon>DeletePostavleno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePostavshik.xaml.cs">
+      <DependentUpon>DeletePostavshik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUrLico.xaml.cs">
+      <DependentUpon>DeleteUrLico.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditDogovor.xaml.cs">
       <DependentUpon>EditDogovor.xaml</DependentUpon>
     </Compile>
@@ -146,6 +161,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddUrLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteDogovor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteFizLico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeletePostavleno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeletePostavshik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteUrLico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

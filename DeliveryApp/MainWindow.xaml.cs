@@ -114,5 +114,35 @@ namespace DeliveryApp
             EditPostavleno form = new EditPostavleno();
             form.Show();
         }
+
+        private void OpenDeletePostavshik(object sender, RoutedEventArgs e)
+        {
+            DeletePostavshik form = new DeletePostavshik();
+            form.Show();
+        }
+
+        private void OpenDeleteDogovor(object sender, RoutedEventArgs e)
+        {
+            DeleteDogovor form = new DeleteDogovor();
+            form.Show();
+        }
+
+        private void OpenDeleteFizLico(object sender, RoutedEventArgs e)
+        {
+            DeleteFizLico form = new DeleteFizLico();
+            form.Show();
+        }
+
+        private void OpenDeleteUrLico(object sender, RoutedEventArgs e)
+        {
+            DeleteUrLico form = new DeleteUrLico();
+            form.Show();
+        }
+
+        private void OpenDeletePostavleno(object sender, RoutedEventArgs e)
+        {
+            DeletePostavleno form = new DeletePostavleno();
+            form.Show();
+        }
     }
 }
