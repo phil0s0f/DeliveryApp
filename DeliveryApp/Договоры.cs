@@ -19,7 +19,18 @@ namespace DeliveryApp
         {
             this.Поставлено = new HashSet<Поставлено>();
         }
-    
+
+        public string NamePostav
+        {
+            get
+            {
+                if (Поставщики.ФизическиеЛица != null)
+                    return Поставщики.ФизическиеЛица.Фамилия + Поставщики.ФизическиеЛица.Имя + Поставщики.ФизическиеЛица.Отчество;
+                else
+                    return Поставщики.ЮридическиеЛица.Название;
+            }
+        }
+        public string dateDogovor { get { return ДатаДоговора.Value.Date.ToShortDateString(); } }
         public int НомерДоговора { get; set; }
         public Nullable<System.DateTime> ДатаДоговора { get; set; }
         public int КодПоставщика { get; set; }

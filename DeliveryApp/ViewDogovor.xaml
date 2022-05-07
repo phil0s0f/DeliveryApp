@@ -10,8 +10,8 @@
         <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="dataDogovor" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер договора" Width="*" Binding="{Binding НомерДоговора}"/>
-                <DataGridTextColumn Header="Дата договора" Width="2*" Binding="{Binding ДатаДоговора}"/>
-                <DataGridTextColumn Header="Код поставщика" Width="2*" Binding="{Binding КодПоставщика}"/>
+                <DataGridTextColumn Header="Дата договора" Width="2*" Binding="{Binding dateDogovor}"/>
+                <DataGridTextColumn Header="Поставщик" Width="2*" Binding="{Binding NamePostav}"/>
                 <DataGridTextColumn Header="Комментарий" Width="2*" Binding="{Binding Комментарий}"/>
             </DataGrid.Columns>
         </DataGrid>
