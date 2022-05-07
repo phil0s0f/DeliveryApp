@@ -34,6 +34,8 @@ namespace DeliveryApp
             urlico.НомерСвидетельстваНДС = NomerSvidNdsBox.Text;
             context.ЮридическиеЛица.Add(urlico);
             context.SaveChanges();
+            MessageBox.Show("Данные успешно добавлены");
+            KodPostavshikBox.Text = NameBox.Text = NalogNomerBox.Text = NomerSvidNdsBox.Text = "";
         }
     }
 }

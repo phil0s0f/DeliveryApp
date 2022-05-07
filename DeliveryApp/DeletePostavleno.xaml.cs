@@ -40,6 +40,7 @@ namespace DeliveryApp
             Поставлено post = NomerDogovoraBox.SelectedItem as Поставлено;
             context.Поставлено.Remove(post);
             context.SaveChanges();
+            MessageBox.Show("Данные удалены");
         }
     }
 }

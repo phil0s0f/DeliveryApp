@@ -42,8 +42,9 @@ namespace DeliveryApp
             context.Поставлено.Find(post.НомерДоговора).Количество = Convert.ToInt32(KolichestvoBox.Text);
             context.Поставлено.Find(post.НомерДоговора).Цена = Convert.ToDecimal(CenaBox.Text);
             context.SaveChanges();
+            MessageBox.Show("Данные успешно изменены");
         }
 
-        
+
     }
 }

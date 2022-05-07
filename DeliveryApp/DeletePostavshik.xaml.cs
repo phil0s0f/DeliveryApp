@@ -40,6 +40,7 @@ namespace DeliveryApp
             Поставщики post = KodPostavBox.SelectedItem as Поставщики;
             context.Поставщики.Remove(post);
             context.SaveChanges();
+            MessageBox.Show("Данные удалены");
         }
     }
 }

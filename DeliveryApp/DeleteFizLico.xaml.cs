@@ -41,6 +41,7 @@ namespace DeliveryApp
             ФизическиеЛица fizlico = KodPostavshikBox.SelectedItem as ФизическиеЛица;
             context.ФизическиеЛица.Remove(fizlico);
             context.SaveChanges();
+            MessageBox.Show("Данные удалены");
         }
     }
 }

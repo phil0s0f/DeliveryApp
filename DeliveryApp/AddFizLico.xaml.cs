@@ -35,6 +35,8 @@ namespace DeliveryApp
             fizlico.НомерСвидетельства = NomerSvidBox.Text;
             context.ФизическиеЛица.Add(fizlico);
             context.SaveChanges();
+            MessageBox.Show("Данные успешно добавлены");
+            KodPostavshikBox.Text = FamBox.Text = NameBox.Text = OtchBox.Text = NomerSvidBox.Text = "";
         }
     }
 }

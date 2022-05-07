@@ -44,6 +44,7 @@ namespace DeliveryApp
             context.ФизическиеЛица.Find(fizlico.КодПоставщика).Отчество = OtchBox.Text;
             context.ФизическиеЛица.Find(fizlico.КодПоставщика).НомерСвидетельства = NomerSvidBox.Text;
             context.SaveChanges();
+            MessageBox.Show("Данные успешно изменены");
         }
     }
 }

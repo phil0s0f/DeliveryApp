@@ -33,6 +33,8 @@ namespace DeliveryApp
             postav.Примечание = CommentBox.Text;
             context.Поставщики.Add(postav);
             context.SaveChanges();
+            MessageBox.Show("Данные успешно добавлены");
+            KodPostavBox.Text = AdresBox.Text = CommentBox.Text = "";
         }
     }
 }

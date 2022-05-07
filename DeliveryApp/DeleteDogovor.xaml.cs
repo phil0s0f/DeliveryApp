@@ -40,6 +40,7 @@ namespace DeliveryApp
             Договоры dogovor = NomerDogovoraBox.SelectedItem as Договоры;
             context.Договоры.Remove(dogovor);
             context.SaveChanges();
+            MessageBox.Show("Данные удалены");
         }
     }
 }

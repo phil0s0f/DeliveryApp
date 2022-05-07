@@ -42,6 +42,7 @@ namespace DeliveryApp
             context.ЮридическиеЛица.Find(urlico.КодПоставщика).НалоговыйНомер = NalogNomerBox.Text;
             context.ЮридическиеЛица.Find(urlico.КодПоставщика).НомерСвидетельстваНДС = NomerSvidNdsBox.Text;
             context.SaveChanges();
+            MessageBox.Show("Данные успешно изменены");
         }
     }
 }

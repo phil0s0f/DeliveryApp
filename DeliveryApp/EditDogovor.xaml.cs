@@ -42,6 +42,7 @@ namespace DeliveryApp
             context.Договоры.Find(dogovor.НомерДоговора).КодПоставщика = Convert.ToInt32(KodPostavshikBox.Text);
             context.Договоры.Find(dogovor.НомерДоговора).Комментарий = CommentBox.Text;
             context.SaveChanges();
+            MessageBox.Show("Данные успешно изменены");
         }
     }
 }

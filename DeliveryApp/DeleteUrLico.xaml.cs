@@ -40,6 +40,7 @@ namespace DeliveryApp
             ЮридическиеЛица urlico = KodPostavshikBox.SelectedItem as ЮридическиеЛица;
             context.ЮридическиеЛица.Remove(urlico);
             context.SaveChanges();
+            MessageBox.Show("Данные удалены");
         }
     }
 }

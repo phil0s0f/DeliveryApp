@@ -40,6 +40,7 @@ namespace DeliveryApp
             context.Поставщики.Find(post.КодПоставщика).Адрес = AdresBox.Text;
             context.Поставщики.Find(post.КодПоставщика).Примечание = CommentBox.Text;
             context.SaveChanges();
+            MessageBox.Show("Данные успешно изменены");
         }
     }
 }

@@ -34,6 +34,8 @@ namespace DeliveryApp
             postavleno.Цена = Convert.ToDecimal(CenaBox.Text);
             context.Поставлено.Add(postavleno);
             context.SaveChanges();
+            MessageBox.Show("Данные успешно добавлены");
+            NomerDogovoraBox.Text = TovarBox.Text = KolichestvoBox.Text = CenaBox.Text = "";
         }
     }
 }
