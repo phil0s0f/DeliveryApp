@@ -29,13 +29,13 @@ namespace DeliveryApp
             deliveryEntities context = new deliveryEntities();
             Договоры dogovor = new Договоры();
             dogovor.НомерДоговора = Convert.ToInt32(NomerDogovoraBox.Text);
-            dogovor.ДатаДоговора = Convert.ToDateTime(NomerDogovoraBox.Text);
+            dogovor.ДатаДоговора = Convert.ToDateTime(DateDogovoraBox.Text);
             dogovor.КодПоставщика = Convert.ToInt32(KodPostavshikBox.Text);
             dogovor.Комментарий = CommentBox.Text;
             context.Договоры.Add(dogovor);
             context.SaveChanges();
             MessageBox.Show("Данные успешно добавлены");
-            NomerDogovoraBox.Text = NomerDogovoraBox.Text = KodPostavshikBox.Text = CommentBox.Text = "";
+            NomerDogovoraBox.Text = NomerDogovoraBox.Text = KodPostavshikBox.Text = CommentBox.Text = DateDogovoraBox.Text = "";
         }
     }
 }
